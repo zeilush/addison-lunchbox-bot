@@ -1,0 +1,23 @@
+{
+  "name": "addisonbot",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "~4.13.4",
+    "body-parser": "~1.15.1",
+    "compression": "~1.6.1",
+    "request": "~2.72.0",
+    "passport": "~0.3.2 ",
+    "passport-facebook": "~2.1.0",
+    "connect-ensure-login": "^0.1.1",
+    "pug": "~2.0.0-alpha7",
+    "express-session": "^1.13.0",
+    "lodash": "~4.12.0",
+    "node-wit": "~3.3.0",
+    "async": "~2.0.0-rc.4",
+    "node-uuid": "1.4.7",
+    "redis": "2.6.0-2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

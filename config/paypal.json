@@ -1,0 +1,13 @@
+{
+  "amount": "50",
+  "biller": {
+    "email": "asd@gmx.de",
+    "name": "asd@gmx.de",
+    "referenceId": "asd@gmx.de"
+  },
+  "cancelUrl": "https://apps.facebook.com/de_addison_lunchbox/?payment=failed",
+  "description": "Bill from the company night out (Pizza and Beer)! This is your share:",
+  "payer": [],
+  "paymentServiceType": "PAYPAL",
+  "returnUrl": "https://apps.facebook.com/de_addison_lunchbox/?payment=ok"
+}

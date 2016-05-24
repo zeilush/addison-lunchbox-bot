@@ -1,0 +1,102 @@
+hmtl
+ head
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+  link(rel="stylesheet" href="http://blackrockdigital.github.io/startbootstrap-freelancer/css/freelancer.css")
+  link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-aNUYGqSUL9wG/vP7+cWZ5QOM4gsQou3sBfWRr/8S3R1Lv0rysEmnwsRKMbhiQX/O", crossorigin="anonymous")
+  link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700")
+  link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic")
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js")
+  title LUNCHBOX
+  style.
+    .row {
+      background-color: white;
+    }
+    * {
+      text-align: center;
+      color: #ffffff;
+    }
+    .middle {
+      background-color: rgba(0, 128, 197, 1);
+      margin-top: 60px;
+      height: 100%;
+      width: 520px;
+    }
+    .header {
+      margin: 30px 30px 10px 30px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    h1 {
+      font-size:70px;
+      color: #E6742E;
+    }
+    h4 {
+      margin: 30px;
+    }
+    h6 {
+      font-style: italic;
+    }
+    .title {
+      margin-top: -20px;
+    }
+    .titleBrand {
+      text-align: left;
+      padding-left: 48px;
+    }
+    .value {
+      font-size: 90px;
+      margin-bottom: 50px;
+      color: white;
+    }
+    .buttonPP {
+        border: 1px solid white;
+        padding: 25px;
+        border-radius: 5px;
+
+    }
+    .brand {
+        position: absolute;
+        left: 20px;
+    }
+    .buttonBar a{
+        padding: 5px;
+    }
+    .table-striped > tbody > tr:nth-of-type(odd) td {
+        color: rgba(0, 128, 197, 1);
+    }
+ body
+  .row
+    .col-md-4 &nbsp;
+    .col-md-4.middle
+     div
+      h6.titleBrand Addison
+      h1.title LunchBox
+      p.lead Admin-area
+     div
+       h4 #{payment.name}
+     div
+       h4.value #{payment.amount} €
+     div
+       h4 #{payment.invoices.length} participants
+     div
+       h6 #{payment.description}
+     div
+       table.table.table-striped
+         thead
+           tr
+             th Name
+             th Amount
+             th State
+         tbody
+           - for (var x = 0; x < payment.invoices.length; x++) {
+             tr
+               td #{payment.invoices[x].payer.name}
+               td #{payment.invoices[x].amount} €
+               td #{payment.invoices[x].state}
+           - }
+     div
+       h4 Overall&nbsp;state: #{payment.state}
+    .col-md-4 &nbsp;
