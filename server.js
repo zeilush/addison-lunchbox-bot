@@ -60,6 +60,7 @@ app.post('/webhook', function (req, res) {
                 bot.deleteRedisCache(event.sender.id, function (id) {
                     bot.runConversation(id, event.message.text, function (msg, id) {
                         console.log(id);
+                        console.log(msg);
                         sendTextMessage(id, {text: msg})
                     }, function (invoice, id) {
                         console.log("sendBills cb");
@@ -69,6 +70,7 @@ app.post('/webhook', function (req, res) {
             } else {
                 bot.runConversation(event.sender.id, event.message.text, function (msg, id) {
                     console.log(id);
+                    console.log(msg);
                     sendTextMessage(id, {text: msg})
                 }, function (invoice, id) {
                     console.log("sendBills cb");
