@@ -178,6 +178,7 @@ exports.runConversation = function (id,text, cb, sendBillCB) {
         }, function (context0, callback) {
             console.log("set context to redis with key - "+ id);
             redisClient.set(id, JSON.stringify(context0), function(err, reply) {
+                console.log(err);
                 callback(null,context0)
             });
         }], function (err, result) {
