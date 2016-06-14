@@ -148,6 +148,13 @@ function getAdminPage(req, res) {
         if (response.statusCode === 200) {
             var json = JSON.parse(body);
             console.log(json);
+            if (json.state == 'OPEN') {
+                json.state = "Pending";
+            } else if (json.state == 'PAYED') {
+                json.state = "Payed";
+            } else if (json.state == 'COMPLETELY_COLLECTED') {
+                json.state = "Payed";
+            }
             res.render('home2', {
                 payment: json
             });
