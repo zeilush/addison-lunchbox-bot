@@ -41,6 +41,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
+    console.log(req.query.userId);
     if (req.query.userId) {
         getAdminPage(req, res);
     } else if (req.query.payment === 'ok') {
@@ -143,6 +144,7 @@ function getAdminPage(req, res) {
         method: 'GET',
         uri: adminEndPoint + '/' + req.query.userId // + "00001111" // = test-ID vs. req.query.paymentId
     }, function (error, response, body) {
+        console.log(error);
         if (response.statusCode === 200) {
             var json = JSON.parse(body);
             console.log(json);
