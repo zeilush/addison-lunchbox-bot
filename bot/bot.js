@@ -97,6 +97,7 @@ function initBot(mycb, sendBillCB, id) {
             mycb(message,id);
         },
         merge(sessionId, context, entities, message, cb) {
+            console.log(message);
             if (context
                 && context.intend
                 && context.contacts
@@ -178,59 +179,8 @@ exports.runConversation = function (id,text, cb, sendBillCB) {
         }, function (context0, callback) {
             console.log("set context to redis with key - "+ id);
             redisClient.set(id, JSON.stringify(context0), function(err, reply) {
-                console.log(err);
                 callback(null,context0)
             });
         }], function (err, result) {
     });
-
-
-
-
-
-
-    /*
-     client.runActions(session, 'bill', context0, function (e, context0) {
-     if (e) {
-     console.log('Oops! Got an error: ' + e);
-     return;
-     }
-     console.log('The session state is now: ' + JSON.stringify(context0));
-     client.runActions(session, 'Engin', context0, function (e, context0) {
-     if (e) {
-     console.log('Oops! Got an error: ' + e);
-     return;
-     }
-     console.log('The session state is now: ' + JSON.stringify(context0));
-     client.runActions(session, '50€', context0, function (e, context0) {
-     if (e) {
-     console.log('Oops! Got an error: ' + e);
-     return;
-     }
-     console.log('The session state is now: ' + JSON.stringify(context0));
-     client.runActions(session, 'Paypal', context0, function (e, context0) {
-     if (e) {
-     console.log('Oops! Got an error: ' + e);
-     return;
-     }
-     console.log('The session state is now: ' + JSON.stringify(context0));
-     client.runActions(session, 'ed@ed.de', context0, function (e, context0) {
-     if (e) {
-     console.log('Oops! Got an error: ' + e);
-     return;
-     }
-     console.log('The session state is now: ' + JSON.stringify(context0));
-     client.runActions(session, 'Yes', context0, function (e, context0) {
-     if (e) {
-     console.log('Oops! Got an error: ' + e);
-     return;
-     }
-     console.log('The session state is now: ' + JSON.stringify(context0));
-     });
-     });
-     });
-     });
-     });
-
-     });*/
 };
