@@ -97,7 +97,9 @@ function initBot(mycb, sendBillCB, id) {
             mycb(message,id);
         },
         merge(sessionId, context, entities, message, cb) {
-           /* if (context
+            console.log(entities);
+            console.log(context);
+            if (context
                 && context.intend
                 && context.contacts
                 && context.amount
@@ -111,7 +113,7 @@ function initBot(mycb, sendBillCB, id) {
                 parseMessage(entities, context);
                 parseService(entities, context);
                 parseAccount(entities, context);
-            }*/
+            }
             //console.log(entities);
             //console.log(context);
             cb(context);
