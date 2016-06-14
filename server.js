@@ -167,6 +167,7 @@ function createPayment(userId, invoice) {
             }, function (error, response, body) {
                 if (response.statusCode === 200) {
                     var json = JSON.parse(body);
+                    console.log(json);
                     callback(null, json);
                     //sendTextMessage(userId, {text: "Hello " + json.first_name + "! How can I help you today?"});
                 }
