@@ -57,11 +57,10 @@ app.post('/webhook', function (req, res) {
         var event = events[i];
         if (event.message && event.message.text) {
             console.log(event.sender.id);
-            if (event.message.text === 'Hi') {
+            if (event.message.text === 'Hi Lunchbox') {
                 bot.deleteRedisCache(event.sender.id, function (id) {
                     bot.runConversation(id, event.message.text, function (msg, id) {
                         console.log(id);
-                        console.log(msg);
                         sendTextMessage(id, {text: msg})
                     }, function (invoice, id) {
                         console.log("sendBills cb");
@@ -71,7 +70,6 @@ app.post('/webhook', function (req, res) {
             } else {
                 bot.runConversation(event.sender.id, event.message.text, function (msg, id) {
                     console.log(id);
-                    console.log(msg);
                     sendTextMessage(id, {text: msg})
                 }, function (invoice, id) {
                     console.log("sendBills cb");
